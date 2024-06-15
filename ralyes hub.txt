@@ -1,0 +1,47 @@
+local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))()
+local key = "F4CKYOU" -- Put your key here.
+local window = PabloLib:Create(
+"Key System",
+"Enabled"
+"p"
+)
+
+local tab1 = window:CreateTab("Key System")
+tab1:CreateWarning("Please put key to contiune.")
+tab1:CreateTextbox("Put key here:", function(a)
+if a == key then
+-- Put your code here what happens after you entered the correct key.
+window:CreateTab("TestTab")
+else
+local warning = tab1:CreateWarning("Wrong key! Please try again.") -- If the key is wrong it will creates a warning says "Wrong Key! Please try again." after 2 seconds it deletes. 
+wait(2)
+warning:Delete() 
+end
+end)
+
+local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))()
+local window = PabloLib:Create("ralye23's pro hub", -- Name here.
+
+---Tabs---
+
+local tab1 = window:CreateTab("AutoFarm")
+
+---buttons---
+
+tab1:CreateButton("Blacksmith Autofarm", function()
+while true do
+   wait()
+for i, v in pairs(game.Workspace:GetDescendants()) do
+   if v:IsA("ProximityPrompt") then
+   if v.Parent:IsA("Part") then
+       if v.Parent.Size == Vector3.new(1,1,1) and v.Name ~= "ConscriptionProx" then
+       if (v.Parent.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 500 then
+           fireproximityprompt(v)
+       end
+       end
+       end
+   end
+end
+wait(.7)
+end)
+tab1:CreateWarning("Warning this Script is Not Intended for Harmful Purposes and we aren't Responsible for you. by using this Script you accept our Terms and Conditions.")
